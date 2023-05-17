@@ -216,14 +216,7 @@ public class SignUp extends AppCompatActivity {
             food_load.setVisibility(View.INVISIBLE);
         }
     }
-    private void vibrateDevice() {
-        Vibrator v3 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            v3.vibrate(VibrationEffect.createOneShot(28, VibrationEffect.DEFAULT_AMPLITUDE));
-        } else {
-            //deprecated in API 26
-            v3.vibrate(25);
-        }
+
     }
     private void FirebaseGoogleAuth(GoogleSignInAccount acct) {
         AuthCredential authCredential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
