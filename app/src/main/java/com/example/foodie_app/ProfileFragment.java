@@ -26,8 +26,6 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
-
-import com.avaris.flyfood.Menu;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -89,8 +87,6 @@ public class ProfileFragment extends Fragment {
                    vibrateDeviceSecond();
                 }, splash_screen_time_out);
                 Toast.makeText(getActivity(),"Bhojan, App developed by One Silicon Diode ;)",Toast.LENGTH_SHORT).show();
-                Intent toEaster = new Intent(getActivity(), Menu.class);
-                startActivity(toEaster);
             }
         }));
 
