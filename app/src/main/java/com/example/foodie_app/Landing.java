@@ -31,56 +31,8 @@ public class Landing extends AppCompatActivity {
         setContentView(R.layout.activity_landing);
         animatedBottomBar = findViewById(R.id.bottomNavigation);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,new HomeFragment()).commit();
-        animatedBottomBar.setOnTabSelectListener(new AnimatedBottomBar.OnTabSelectListener() {
-            @Override
-            public void onTabSelected(int lastIndex, @Nullable AnimatedBottomBar.Tab lastTab, int newIndex, @NotNull AnimatedBottomBar.Tab newTab) {
-                Fragment fragment = null;
-                switch (newTab.getId()){
-                    case R.id.bhojan:
-                        fragment = new HomeFragment();
-                        break;
-                    case R.id.share:
-                        fragment = new ShareFragment();
-                        break;
-                    case R.id.profile:
-                        fragment = new ProfileFragment();
-                        break;
-                }
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,fragment).commit();
-            }
+        animatedBottomBar.setOnTabSelectListener(new AnimatedBottomBar.OnTabSelectListener()
 
-            @Override
-            public void onTabReselected(int i, @NotNull AnimatedBottomBar.Tab tab) {
-                //DO NOTHING
-            }
-        });
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        finish();
-    }
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mAppUpdateManager = AppUpdateManagerFactory.create(this);
-        mAppUpdateManager.registerListener(installStateUpdatedListener);
-        mAppUpdateManager.getAppUpdateInfo().addOnSuccessListener(appUpdateInfo -> {
-
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE /*AppUpdateType.IMMEDIATE*/)){
-
-                try {
-                    mAppUpdateManager.startUpdateFlowForResult(
-                            appUpdateInfo, AppUpdateType.IMMEDIATE /*AppUpdateType.IMMEDIATE*/, Landing.this, RC_APP_UPDATE);
-
-                } catch (IntentSender.SendIntentException e) {
-                    e.printStackTrace();
-                }
-
-            }
         });
     }
     InstallStateUpdatedListener installStateUpdatedListener = new
@@ -93,7 +45,9 @@ public class Landing extends AppCompatActivity {
                         }
 
                     } else {
-                        //App Is Fully Updated Nothing To Do, Continuing Normal WorkFlow but do not erase the else func
+                        //App Is Fully Updated Nothing To Do, Continuing Normal WorkFlow but do not erase the else func. 
+//                         Do nothing.
+             
                     }
                 }
             };

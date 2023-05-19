@@ -1,4 +1,4 @@
-package com.example.foodie_app;
+Foodpackage com.example.foodie_app;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -24,9 +24,9 @@ public class AboutDevelopers extends AppCompatActivity {
 
     private ListView mListView;
     private Button mButton;
-    private String [] names = {"Saumya Singh", "Saurabh Singh","Samarth jain"};
-
-
+    private String [] names = {"Spandan Saxena", "Shrish Sharma"};
+    private String [] urls = {"https://spandansaxena.codes/", "https://shrishsharma.me/"};
+    private int [] images = {R.drawable.spandan, R.drawable.shrish};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,10 +51,9 @@ public class AboutDevelopers extends AppCompatActivity {
 
     public class devAdapter extends BaseAdapter{
 
-
         @Override
         public int getCount() {
-            return 0;
+            return images.length;
         }
 
         @Override
@@ -74,11 +73,11 @@ public class AboutDevelopers extends AppCompatActivity {
             ImageView mImageView = convertView.findViewById(R.id.imgDev1);
             TextView mTextView = convertView.findViewById(R.id.nameDev1);
             mTextView.setText(names[position]);
-            
+            mImageView.setImageResource(images[position]);
             mButton.setOnClickListener(v -> {
                 CustomTabsIntent.Builder customIntent = new CustomTabsIntent.Builder();
                 customIntent.setToolbarColor(ContextCompat.getColor(AboutDevelopers.this, R.color.orange_500));
-
+                openCustomTab(AboutDevelopers.this, customIntent.build(), Uri.parse(urls[position]));
             });
             return convertView;
         }
