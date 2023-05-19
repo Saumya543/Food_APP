@@ -19,4 +19,7 @@ public class AnimatedBottomBar extends View {
 
     public void setOnTabSelectListener(AnimatedBottomBar.OnTabSelectListener onTabSelectListener) {
     }
+
+    public class OnTabSelectListener {
+    }
 }

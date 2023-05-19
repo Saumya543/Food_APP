@@ -51,9 +51,10 @@ public class AboutDevelopers extends AppCompatActivity {
 
     public class devAdapter extends BaseAdapter{
 
+
         @Override
         public int getCount() {
-            return images.length;
+            return 0;
         }
 
         @Override
@@ -73,11 +74,11 @@ public class AboutDevelopers extends AppCompatActivity {
             ImageView mImageView = convertView.findViewById(R.id.imgDev1);
             TextView mTextView = convertView.findViewById(R.id.nameDev1);
             mTextView.setText(names[position]);
-            mImageView.setImageResource(images[position]);
+            
             mButton.setOnClickListener(v -> {
                 CustomTabsIntent.Builder customIntent = new CustomTabsIntent.Builder();
                 customIntent.setToolbarColor(ContextCompat.getColor(AboutDevelopers.this, R.color.orange_500));
-                openCustomTab(AboutDevelopers.this, customIntent.build(), Uri.parse(urls[position]));
+
             });
             return convertView;
         }
