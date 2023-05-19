@@ -24,9 +24,7 @@ public class AboutDevelopers extends AppCompatActivity {
 
     private ListView mListView;
     private Button mButton;
-    private String [] names = {"Spandan Saxena", "Shrish Sharma"};
-    private String [] urls = {"https://spandansaxena.codes/", "https://shrishsharma.me/"};
-    private int [] images = {R.drawable.spandan, R.drawable.shrish};
+    private String [] names = {"Saumya"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
