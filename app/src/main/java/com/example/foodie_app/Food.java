@@ -4,6 +4,7 @@ public class Food {
     private String description;
     private String suggestions;
     private String key;
+    
     private String imageUrl;
     private String latitude;
     private String longitude;
