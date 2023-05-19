@@ -45,7 +45,9 @@ public class Landing extends AppCompatActivity {
                         }
 
                     } else {
-                        //App Is Fully Updated Nothing To Do, Continuing Normal WorkFlow but do not erase the else func
+                        //App Is Fully Updated Nothing To Do, Continuing Normal WorkFlow but do not erase the else func. 
+//                         Do nothing.
+             
                     }
                 }
             };
